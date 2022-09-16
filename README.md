@@ -2,8 +2,8 @@
 
 ## STEP 1: MASTER NODE INSTALLATION
 
-Create EC2 Instance from UBUNTU AMI with type t2.medium (2 core CPU and 4GB Ram) and
-Github URL: https://github.com/adhig93/k8sinstall [use installk8s-1.23.8.sh - stable]
+- Create EC2 Instance from UBUNTU AMI with type t2.medium (2 core CPU and 4GB Ram)
+- Github URL: https://github.com/adhig93/k8sinstall [use installk8s-1.23.8.sh - stable]
 
 ### COMMANDS:
 ```
