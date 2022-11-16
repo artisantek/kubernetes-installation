@@ -42,7 +42,7 @@ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 ### Installing a CNI network on master node [ubuntu user]
 ```
 sudo sysctl net.bridge.bridge-nf-call-iptables=1
-kubectl apply -f "https://cloud.weave.works/k8s/v1.13/net.yaml"
+kubectl apply -f https://github.com/weaveworks/weave/releases/download/v2.8.1/weave-daemonset-k8s.yaml
 kubectl get nodes
 ```
 
