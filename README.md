@@ -26,8 +26,8 @@ create worker nodes.
 ### Initializing Master Server [root user]
 
 ```
-sudo su --> To goto root user
-kubeadm init --> To initialize Master server
+sudo su
+kubeadm init
 ```
 >Note: Copy the command along with token generated and keep it in a separate file, we need to run this command on worker nodes
 
