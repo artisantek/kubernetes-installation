@@ -26,8 +26,8 @@ create worker nodes.
 ### Initializing Master Server [root user]
 
 ```
-sudo su --> To goto root user
-kubeadm init --> To initialize Master server
+sudo su
+kubeadm init
 ```
 >Note: Copy the command along with token generated and keep it in a separate file, we need to run this command on worker nodes
 
@@ -42,7 +42,7 @@ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 ### Installing a CNI network on master node [ubuntu user]
 ```
 sudo sysctl net.bridge.bridge-nf-call-iptables=1
-kubectl apply -f "https://cloud.weave.works/k8s/v1.13/net.yaml"
+kubectl apply -f https://github.com/weaveworks/weave/releases/download/v2.8.1/weave-daemonset-k8s.yaml
 kubectl get nodes
 ```
 
@@ -56,5 +56,5 @@ kubeadm join <TOKEN> [Command from STEP 3] --> To connect worker node to Master
 ## STEP 5: Login back to Master instance created in STEP 1
 
 ```
-kubectl get nodes --> To list all the nodes on the cluster
+kubectl get nodes
 ```
