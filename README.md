@@ -3,12 +3,12 @@
 ## STEP 1: MASTER NODE INSTALLATION
 
 - Create EC2 Instance from UBUNTU AMI with type t2.medium (2 core CPU and 4GB Ram)
-- Github URL: https://github.com/adhig93/k8sinstall [use installk8s-1.23.8.sh - stable]
+- Github URL: https://github.com/artisantek/kubernetes-installation [use installk8s-1.23.8.sh - stable]
 
 ### COMMANDS:
 ```
-git clone https://github.com/adhig93/k8sinstall.git
-cd k8sinstall
+git clone https://github.com/artisantek/kubernetes-installation
+cd kubernetes-installation
 sudo sh installk8s-1.23.8.sh
 ```
 
@@ -18,7 +18,7 @@ sudo sh installk8s-1.23.8.sh
 1. Right-click on the instance you want to use as the basis for your AMI or Click-on Actions button.
 2. Action --> Image --> Create Image
 
-Once the Ami is available (usually it takes 2-8 minutes to get ready), create instances with t2.micro to
+Once the Ami is available (usually it takes 2-8 minutes to get ready), create 2 instances with t2.micro to
 create worker nodes.
 
 ## STEP 3: Login back to Master instance created in STEP 1
