@@ -3,13 +3,13 @@
 ## STEP 1: MASTER NODE INSTALLATION
 
 - Create EC2 Instance from UBUNTU AMI with type t2.medium (2 core CPU and 4GB Ram)
-- Github URL: https://github.com/artisantek/kubernetes-installation [use installk8s-1.23.8.sh - stable]
+- Github URL: https://github.com/artisantek/kubernetes-installation
 
 ### COMMANDS:
 ```
 git clone https://github.com/artisantek/kubernetes-installation
 cd kubernetes-installation
-sudo sh installk8s-1.23.8.sh
+bash install-kubernetes-1.30.sh
 ```
 
 ## STEP 2: Kubernetes node template is now ready create an AMI from this instance to create worker nodes
@@ -39,11 +39,9 @@ sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
 ```
 
-### Installing a CNI network on master node [ubuntu user]
+### Installing a POD network on master node [ubuntu user]
 ```
-sudo sysctl net.bridge.bridge-nf-call-iptables=1
-kubectl apply -f https://github.com/weaveworks/weave/releases/download/v2.8.1/weave-daemonset-k8s.yaml
-kubectl get nodes
+kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
 ```
 
 ## STEP 4: Initialize WORKER NODES [ssh to worker nodes created from STEP 2]
